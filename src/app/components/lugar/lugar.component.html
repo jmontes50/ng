@@ -1,0 +1,19 @@
+<div class="card mb-2">
+    <img [src]="lug.lug_img" alt="foto" class="card-img-top img-fluid">
+    <div class="card-body">
+        <h5 class="card-title">
+            {{lug.lug_nom}}
+        </h5>
+        <p class="card-text">
+            {{lug.lug_desc}}
+        </p>
+    </div>
+    <div class="card-footer">
+        <div class="d-grid">
+            <!-- http://localhost:4200/editarlugar/2/17 -->
+            <a class="btn btn-primary" [routerLink]="['editarlugar',lug.categoriaId,lug.lug_id]">
+                Editar
+            </a>
+        </div>
+    </div>
+</div>

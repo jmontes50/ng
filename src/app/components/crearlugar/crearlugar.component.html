@@ -1,0 +1,76 @@
+<h3 class="my-3">
+    Crear Lugar
+</h3>
+<form>
+    <div class="mb-3">
+        <label class="form-label">Nombre:</label>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Ej. Tanta"
+            [(ngModel)]="nuevoLugar.lug_nom"
+            name="nombre"
+        >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Descripción:</label>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Ej. Tanta es un restaurante creado por Gastón Acurio"
+            [(ngModel)]="nuevoLugar.lug_desc"
+            name="descripción"
+        >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Dirección:</label>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Ej. Av. Salaverry 200"
+            [(ngModel)]="nuevoLugar.lug_dir"
+            name="direccion"
+        >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Foto url:</label>
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Ej. Picsum"
+            [(ngModel)]="nuevoLugar.lug_img"
+            name="url"
+        >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Latitud:</label>
+        <input
+            type="number"
+            class="form-control"
+            placeholder="Ej. -17"
+            [(ngModel)]="nuevoLugar.lug_coords[0]"
+            name="latitud"
+        >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Longitud:</label>
+        <input
+            type="number"
+            class="form-control"
+            placeholder="Ej. -72"
+            [(ngModel)]="nuevoLugar.lug_coords[1]"
+            name="longitud"
+        >
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Categoria:</label>
+        <select class="form-select" [(ngModel)]="nuevoLugar.categoriaId" name="categoria">
+            <option *ngFor="let cat of categorias" [value]="cat.cat_id">
+                {{cat.cat_nom}}
+            </option>
+        </select>
+    </div>
+    <button (click)="manejarCrearLugar()" class="btn btn-primary">
+        Guardar
+    </button>
+</form>
